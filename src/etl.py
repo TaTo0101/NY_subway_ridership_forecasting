@@ -1,4 +1,4 @@
-### Functions that are used for extract, load, transform operations ###
+''' Functions that are used for extract, load, transform operations '''
 
 import os
 from typing import Union
@@ -204,7 +204,6 @@ class DataLoaderRidership:
         missing_stations = {*station_ids}.difference(stations_exist)
         if len(missing_stations) > 0:
             raise KeyError(f"Some stations are not in data! Missing stations: {missing_stations}")
-
 
         # Status adding zeros
         print("The option to add_zeros is set to True. Will add zero ridership rows to missing hours in data set.")
