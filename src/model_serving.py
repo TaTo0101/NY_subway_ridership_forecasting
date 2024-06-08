@@ -62,13 +62,13 @@ class JetModels:
             self.fh_train = ForecastingHorizon(train_set.index, is_relative=False)
 
     def simple_forecast(self,
-                        forecaster: sktime.forecasting,
+                        forecaster,
                         fh_individual: Union[np.ndarray, list] = None):
         '''
         Trains the forecaster on the train set and performs inference on test set.
 
         Args:
-            forecaster (sktime.forecasting): A sktime forecaster object that will be used as model.
+            forecaster (sktime.forecasting obj): A sktime forecaster object that will be used as model.
             fh_individual(Union[np.ndarray, list], optional): Individual forecasting horizon to use, otherwise uses
                 test_set length as forecast horizon.
 
@@ -104,13 +104,13 @@ class JetModels:
         return result
 
     def cv_forecast(self,
-                    search_strat_class: sktime.forecasting.model_selection,
+                    search_strat_class,
                     fh_individual: Union[np.ndarray, list] = None):
         '''
         Trains forecaster using specified cv nd search strategy. For selected model, train predictions, as well as
         forecasting values are provided, either using test_set length or specified forecasting horizon.
         Args:
-            search_strat_class (sktime.forecasting.model_selection): Instantiated sktime.forecasting.model_selection
+            search_strat_class (sktime.forecasting.model_selection obj): Instantiated sktime.forecasting.model_selection
                 class that governs how optimal model, i.e. hyperparameter selection strategy. Examples include
                 ForecastingGridSearchCV
             fh_individual(Union[np.ndarray, list], optional): Individual forecasting horizon to use, otherwise uses
